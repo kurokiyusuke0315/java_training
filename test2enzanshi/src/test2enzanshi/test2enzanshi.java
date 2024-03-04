@@ -24,7 +24,9 @@ class test2enznshi
 		//2-3
 		int x = 3;
 		int y = 6;
-		int z = x;
+		int z = 0;
+		
+		z = x;
 		x = y;
 		y = z;
 		System.out.println(x);
