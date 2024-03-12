@@ -25,7 +25,7 @@ class test3ifbun1_3
 		
 		System.out.println(num+"点");
 		
-		if (num >= 80 && num <= 100) {
+		if (num >= 80) {
 			System.out.println("優");
 		}
 		else if (num < 80 && num >= 70) {
@@ -34,11 +34,8 @@ class test3ifbun1_3
 		else if (num < 70 && num >= 60) {
 			System.out.println("可");
 		}
-		else if (num < 60 && num >= 0){
+		else if (num < 60){
 			System.out.println("不可");
-		}
-		else {
-			System.out.println("0～100点で入力してください。");
 		}
 	}
 }

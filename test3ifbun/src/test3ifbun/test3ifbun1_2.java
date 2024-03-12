@@ -25,17 +25,14 @@ class test3ifbun1_2
 		
 		System.out.println(num+"点");
 		
-		if (num >= 80 && num <= 100) {
+		if (num >= 80) {
 			System.out.println("たいへんよくできました。");
 		}
 		else if (num < 80 && num >= 60) {
 			System.out.println("よくできました。");
 		}	
-		else if (num < 60 && num >= 0){
+		else if (num < 60){
 			System.out.println("ざんねんでした。");
-		}
-		else {
-			System.out.println("0～100点で入力してください。");
 		}
 	}
 }
