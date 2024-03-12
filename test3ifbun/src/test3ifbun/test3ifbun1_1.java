@@ -25,11 +25,14 @@ class test3ifbun1_1
 		
 		System.out.println(num+"点");
 		
-		if (num >= 60) {
+		if (num >= 60 && num <= 100) {
 			System.out.println("合格");
 		}
-		else if (num < 60) {
+		else if (num < 60 && num >= 0) {
 			System.out.println("不合格");
 		}	
+		else {
+			System.out.println("0～100点で入力してください。");
+		}
 	}
 }
