@@ -16,7 +16,7 @@ class test3ifbun2
 	public static void main(String[] args)throws IOException
 	{		
 		BufferedReader br =
-		 new BufferedReader(new InputStreamReader(System.in));
+		new BufferedReader(new InputStreamReader(System.in));
 
 		System.out.println("xの値を入力してください。");
 		String str1 = br.readLine();
@@ -31,9 +31,9 @@ class test3ifbun2
 		if(x == y && (x + y) <= -1) {
 			System.out.println("xとyは等しく、かつ、負の数である。");
 		}
-		else if(x < y && (x + y) % 2 == 0) {
+		if(x < y && x % 2 == 0 && y % 2 == 0) {
 			System.out.println("xはyより小さく、かつ、x と y は共に偶数である。");
-			}
+		}
 		if(x < y || x % 2 == 0) {
 			System.out.println("x は yより小さい、または、x は偶数である。");
 		}
