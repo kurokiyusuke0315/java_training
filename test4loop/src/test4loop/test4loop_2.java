@@ -15,71 +15,74 @@ public class test4loop_2
 		BufferedReader br =
 		new BufferedReader(new InputStreamReader(System.in));
 		
-		String[][] List = new String[3][3];		//商品、単価、支払金額格納　文字列
-		int[][] List2 = new int[3][2];		//単価、支払金額格納　値
+		String[][] list = new String[3][3];		//商品、単価、支払金額格納　文字列
+		int[][] list2 = new int[3][2];		//単価、支払金額格納　値
+		int sumfusoku = 0;		//不足合計
 		
-		for(int i = 0 ; i < 3 ; i++) {
+		for (int i = 0 ; i < 3 ; i++) {
 			System.out.println("商品を入力してください。");
 			String str = br.readLine();
-			List[i][0] = str;
+			list[i][0] = str;
 			
-			if(str.isEmpty()) {
+			if (str.isEmpty()) {
 				System.out.println((i + 1) + "回目の" + "商品名の入力がありません。");
 				break;
 			}
 			
 			System.out.println("単価を入力してください。");
 			String str2 = br.readLine();
-			List[i][1] = str2;
-			List2[i][0] = Integer.parseInt(List[i][1]);
+			list[i][1] = str2;
+			list2[i][0] = Integer.parseInt(list[i][1]);
 			
-			if(List2[i][0] <= 0) {
+			if (list2[i][0] <= 0) {
 				System.out.println((i + 1) + "回目の単価に0以上の整数を入力して下さい。");
 				break;
 			}
 
 			System.out.println("支払金額を入力してください。");
 			String str3 = br.readLine();
-			List[i][2] = str3;
-			List2[i][1] = Integer.parseInt(List[i][2]);
+			list[i][2] = str3;
+			list2[i][1] = Integer.parseInt(list[i][2]);
 			
-			if(List2[i][1] <= 0) {
+			if (list2[i][0] > list2[i][1]) {
+				sumfusoku += list2[i][0] - list2[i][1]; 
+			}
+			
+			if (list2[i][1] <= 0) {
 				System.out.println((i + 1) +"回目の支払金額に0以上の整数を入力して下さい。");
 				break;
 			}
-			
 		}
-				
-		for(int k = 0 ; k < List.length ; k++) {
-			
-			if(List[k][0].isEmpty()) {
-				break;
-			}
-			if(List2[k][0] <= 0) {
-				break;
-			}
-			if(List2[k][1] <= 0) {
-				break;
-			}
-			
-			if(List2[k][0] > List2[k][1]) {
-				System.out.println(List[k][0] + "、" + List[k][1] + "円、" + "支払金額不足");
+		
+		if (list[0][1] != null || list[0][2] != null) {
+			if (list2[0][0] > list2[0][1]) {
+				System.out.println(list[0][0] + "、" + list[0][1] + "円、" + "支払金額不足");
 			}
 			else {
-				System.out.println(List[k][0] + "、" + List[k][1] + "円、" + "支払金額不足無し");
+				System.out.println(list[0][0] + "、" + list[0][1] + "円、" + "支払金額不足無し");
 			}
 		}
 		
-		int sum = 0;	//単価合計
-		int sum2 = 0;	//支払金額合計
-		
-		for(int j = 0 ; j < List2.length ; j++) {
-			sum += List2[j][0];
-			sum2 += List2[j][1];
+		if (list[1][1] != null || list[1][2] != null) {
+			if (list2[1][0] > list2[1][1]) {
+				System.out.println(list[1][0] + "、" + list[1][1] + "円、" + "支払金額不足");
+			}
+			else {
+				System.out.println(list[1][0] + "、" + list[1][1] + "円、" + "支払金額不足無し");
+			}
 		}
 		
-		if(sum > sum2) {
-			System.out.println("全体の不足金：" + (sum - sum2) + "円");
+		if (list[2][1] != null || list[2][2] != null) {
+			if (list2[2][0] > list2[2][1]) {
+				System.out.println(list[2][0] + "、" + list[2][1] + "円、" + "支払金額不足");
+			}
+			else {
+				System.out.println(list[2][0] + "、" + list[2][1] + "円、" + "支払金額不足無し");
+			}
+		}
+		
+		if (sumfusoku > 0) {
+		System.out.println("全体の不足金:" + sumfusoku + "円");
 		}
 	}
 }

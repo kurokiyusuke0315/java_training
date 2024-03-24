@@ -31,13 +31,13 @@ public class test4loop_1
 		
 		int sum = 0; //遅延利息金合計人数
 		
-		for(int i = 0; i < hoken.length; i++) {
-			if(hoken[i][2] != null) {
+		for (int i = 0; i < hoken.length; i++) {
+			if (hoken[i][2] != null) {
 				sum = sum + 1;
 			}
 			System.out.println("契約者名：" + hoken[i][0] + "、" + "保険料：" + hoken[i][1] + "円");
 		}
-		if(sum >= 1) {
+		if (sum >= 1) {
 			System.out.println("遅延利息金が発生している人数は" + sum + "人です。");
 		}
 	}
