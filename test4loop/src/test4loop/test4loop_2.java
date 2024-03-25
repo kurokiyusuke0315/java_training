@@ -10,7 +10,7 @@ public class test4loop_2
 	 * 不足金額がある場合は、String型配列からint型配列に変換した値を使用し不足金額の合計を出力する。
 	 * @param args　商品、単価、支払金額の格納、不足金額有無の判別と出力、不足金額合計の出力
 	 **/
-	public static void main(String[] args)throws IOException
+	public static void main(String[] args) throws IOException
 	{
 		BufferedReader br =
 		new BufferedReader(new InputStreamReader(System.in));
